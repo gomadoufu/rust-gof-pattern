@@ -56,3 +56,19 @@ impl Observer<EventObject> for ConcreteObserver {
         println!("Observer {} received event {:?}", self.0, e);
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_observer() {
+    let mut subject = ConcreteSubject::new();
+    subject.register_observer(Box::new(ConcreteObserver(1)));
+    subject.register_observer(Box::new(ConcreteObserver(2)));
+    subject.register_observer(Box::new(ConcreteObserver(3)));
+
+    subject.notify_observers(&EventObject(100));
+    subject.notify_observers(&EventObject(200));
+    }
+}

@@ -43,3 +43,21 @@ impl Decorator for ConcreteDecorator {
 pub fn process(c: &dyn Component) {
     c.do_something();
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_decorator() {
+        let c = ConcreteComponent(100);
+        process(&c);
+
+        let d = ConcreteDecorator {
+            component: Box::new(c),
+            more_value: 999,
+        };
+        process(&d);
+        d.do_something_more();
+    }
+}

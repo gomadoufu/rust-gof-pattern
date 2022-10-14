@@ -25,3 +25,14 @@ impl Product for ConcreteProduct {
         s.to_uppercase()
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_factory() {
+        let f = Factory;
+        assert_eq!("HELLO", f.convert("hello".to_string(), || ConcreteProduct));
+    }
+}
