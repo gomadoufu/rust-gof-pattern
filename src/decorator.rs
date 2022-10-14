@@ -21,7 +21,7 @@ impl Component for ConcreteComponent {
 }
 
 pub struct ConcreteDecorator {
-    //デコレータは、具体的なコンポーネントまたは別のデコレータを、実行時に保持する。これを実現するために、トレイトオブジェクトを用いている(dyn)。これにより、Conponentトレイトと同じインターフェースを持つオブジェクトなら、なんでも保持できるようになる。
+    //デコレータは、具体的なコンポーネントまたは別のデコレータを、実行時に保持する。これを実現するために、トレイトオブジェクトを用いている(dyn)。これにより、Componentトレイトと同じインターフェースを持つオブジェクトなら、なんでも保持できるようになる。
     pub component: Box<dyn Component>,
     pub more_value: usize,
 }
@@ -39,6 +39,7 @@ impl Decorator for ConcreteDecorator {
     }
 }
 
+#[allow(dead_code)]
 //ここでもdynキーワードが使われている
 pub fn process(c: &dyn Component) {
     c.do_something();

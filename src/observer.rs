@@ -23,6 +23,7 @@ pub struct ConcreteSubject {
 }
 
 impl ConcreteSubject {
+#[allow(dead_code)]
     pub fn new() -> ConcreteSubject {
         ConcreteSubject {
             observers: Vec::new(),
