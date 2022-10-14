@@ -1,15 +1,18 @@
 mod decorator;
+mod factory;
 mod observer;
 
 use decorator::{process, ConcreteComponent, ConcreteDecorator, Decorator};
+use factory::{ConcreteProduct, Factory};
 use observer::{ConcreteObserver, ConcreteSubject, EventObject, Subject};
 fn main() {
-    println!("Hello, world!");
     observer();
     decorator();
+    factory();
 }
 
 fn observer() {
+    println!("observer");
     let mut subject = ConcreteSubject::new();
     subject.register_observer(Box::new(ConcreteObserver(1)));
     subject.register_observer(Box::new(ConcreteObserver(2)));
@@ -20,6 +23,7 @@ fn observer() {
 }
 
 fn decorator() {
+    println!("decorator");
     let c = ConcreteComponent(100);
     process(&c);
 
@@ -29,4 +33,13 @@ fn decorator() {
     };
     process(&d);
     d.do_something_more();
+}
+
+fn factory() {
+    println!("factory");
+    let f = Factory;
+    println!(
+        "convert: {}",
+        f.convert("hello".to_string(), || ConcreteProduct)
+    );
 }
