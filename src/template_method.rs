@@ -4,7 +4,7 @@
 - 名前の強さの割に難しくない
 - よくやる手法のような気がする
 - hookの概念は初耳だった
-- Rustでデザインパターンを書いててよく出てきた、Box<dyn Trait>って、もしかして"impl Trait"に置き換えられる......?
+-
  */
 trait TemplateMethod {
     fn template_method(&self) {
