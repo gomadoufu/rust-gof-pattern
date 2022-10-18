@@ -5,6 +5,7 @@ mod decorator;
 mod facade;
 mod factory;
 mod observer;
+mod template_method;
 
 fn main() {
     println!("Hello, world!");
