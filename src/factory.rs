@@ -13,7 +13,7 @@ pub trait Product {
 pub struct Factory;
 
 impl Factory {
-#[allow(dead_code)]
+    #[allow(dead_code)]
     pub fn convert<P, F>(&self, s: String, create_product: F) -> String
     where
         P: Product,
