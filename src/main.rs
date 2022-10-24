@@ -5,6 +5,7 @@ mod decorator;
 mod facade;
 mod factory;
 mod observer;
+mod state;
 mod template_method;
 
 fn main() {
