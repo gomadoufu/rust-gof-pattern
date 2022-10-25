@@ -6,6 +6,7 @@ mod facade;
 mod factory;
 mod observer;
 mod state;
+mod state_fromTRPL;
 mod template_method;
 
 fn main() {
