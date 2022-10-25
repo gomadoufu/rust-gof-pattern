@@ -76,7 +76,7 @@ impl State for Published {
 mod test {
     use super::*;
     #[test]
-    fn test_state_fromTRPL() {
+    fn test_state_from_TRPL() {
         let mut post = Post::new();
 
         // 今日はお昼にサラダを食べた
