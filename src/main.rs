@@ -5,6 +5,7 @@ mod decorator;
 mod facade;
 mod factory;
 mod observer;
+mod proxy;
 mod state;
 mod state_fromTRPL;
 mod template_method;
